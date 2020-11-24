@@ -4,6 +4,7 @@ import { FlatList } from 'react-native-gesture-handler';
 
 export default function Login({navigation}, text){
 
+  const viewMain = navigation;
   const [usuarios, setUsuarios] = useState([])
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function Login({navigation}, text){
       </ul>
       <Button
         title='Back' 
-        onPress={()=>this.navigation.navigate('MainS')}>
+        onPress={()=>this.navigation.navigate({viewMain})}>
       </Button>
     </View>
   );
