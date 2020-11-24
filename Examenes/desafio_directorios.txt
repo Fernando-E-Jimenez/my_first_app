@@ -1,0 +1,33 @@
+Hola,
+
+Quería comentarte que como siguiente paso nos gustaría que realices un pequeño proyecto para evaluar tu conocimiento sobre todo a nivel de arquitectura, organización de prioridades, resolución de 
+problemas y tu capacidad de desarrollar algo visualmente atractivo. Te recomendamos que previo a sentarte a desarrollar tomes lápiz y papel para organizar tus ideas y diseñar la solución, esto te 
+servirá al momento de la presentación de la misma. No esperamos que entregues un producto completo, por lo cual hacemos énfasis en la importancia de pensar y escribir el roadmap de tu solución.
+
+Lo que esperamos es una aplicación mobile que consuma datos de una API y dibuje un árbol de directorios. 
+Tienes la libertad de decidir qué datos pintar y con qué estilo.
+
+El usuario debe ser capaz de:
+• Ingresar la url desde donde se debe consumir la estructura de datos en un input tipo texto.
+• Visualizar los resultados en formato de árbol.
+• Refrescar la consulta a la API.
+
+
+El desarrollo debe ser llevado a cabo en React Native (expo) usando las librerias que consideres necesarias. 
+Te pedimos que implementes las siguientes reglas de eslint para facilitar las correcciones.
+ "rules": {
+   "indent": ["error", 2, { "SwitchCase": 1 }],
+   "linebreak-style": ["error", "unix"],
+   "quotes": ["error", "single"],
+   "semi": ["error", "always"],
+   "no-unused-vars": "error",
+   "no-invalid-regexp": "error"
+ },
+Adjuntamos una respuesta de la api:
+
+https://run.mocky.io/v3/c22a2d75-a927-4e9b-bbc5-6ac10aa15a26
+
+Esperamos primeramente que le dediques al desarrollo entre 2 y 5 horas -sin incluir las configuraciones que quieras hacer de dependencias, contenerización y/o virtualización, etc.-, y 
+aproximadamente la misma cantidad de tiempo a pensar en la solución. Es importante que realices commits periódicos a medida que vayas avanzando en el proyecto, nos compartas tu cuenta de 
+GitHub para ver el resultado final y que dejes un instructivo de como levantar la app. 
+Cualquier duda que tengas, estoy a tu disposición. 
