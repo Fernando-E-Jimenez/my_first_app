@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, SafeAreaView } from 'react-native';
+import { Text, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 
-export default function Login(text){
+export default function Login(){
 
+  
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
