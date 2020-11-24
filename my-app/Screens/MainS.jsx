@@ -1,17 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Button } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, View, TextInput, Button, Text } from 'react-native';
 import 'react-native-gesture-handler';
 
 export default function MainS({navigation}){
+
+  const [text, setText] = useState('');
+
   return(
+
     <View style={styles.container}>
-      {/* <Image style={styles.image} source={require('../Recursos/iconoApp.png')} /> */}
-      <TextInput placeholder="Ingrese la URL" style={styles.text}></TextInput>
+      <TextInput 
+        placeholder="Ingrese la URL" 
+        style={styles.text}
+        onChangeText={text => setText(text)}
+        defaultValue={text}>          
+      </TextInput>
       <Button
-        title='Search URL' 
+        title='Search URL'
+        style={styles.button} 
         onPress={()=>navigation.navigate('ShowDocumentTree')}>
       </Button>
+      <Text>{text}</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -20,16 +30,15 @@ export default function MainS({navigation}){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
   },
   text: {
     fontSize: 20,
   },
-  image: {
-    width: 850,
-    height: 250,
-  },
+  button: {
+    width: '80px',
+    height: '30px',
+  }
 });
+
