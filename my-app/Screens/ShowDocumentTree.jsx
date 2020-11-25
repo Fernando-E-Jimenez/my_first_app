@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     height: 120,
   },
   titulo: {
-    color: 'white',
+    color: '#a9a9a9',
     fontSize: 18,
     fontWeight: 'bold',
     fontStyle: 'italic',
