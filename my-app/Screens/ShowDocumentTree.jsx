@@ -11,7 +11,7 @@ export default function Login(){
   }, []);
 
   const obtenerDatos = async () => {
-    const data = await fetch('https://jsonplaceholder.typicode.com/users')
+    const data = await fetch('https://run.mocky.io/v3/c22a2d75-a927-4e9b-bbc5-6ac10aa15a26')
     const users = await data.json();
     setUsuarios(users);
   };
@@ -27,17 +27,25 @@ export default function Login(){
         renderItem={({item}) => (
           <ScrollView style={styles.scroll}>
             <Text style={styles.titulo}> ----------------------------------------------------</Text>
-            <Text style={styles.titulo}>ID: {item.id}</Text>
-            <Text style={styles.titulo}> ----------------------------------------------------</Text>
+            <Text style={styles.titulo}>Type: {item.type}</Text>
             <Text style={styles.titulo}>Name: {item.name}</Text>
-            <Text style={styles.titulo}> UserName: {item.username}</Text>
-            <Text style={styles.titulo}> Email: {item.email}</Text>
-            <Text style={styles.titulo}> Address: </Text>
-            <Text style={styles.titulo}> Street: {item.address.street}</Text>
-            <Text style={styles.titulo}> City: {item.address.city}</Text>
-            <Text style={styles.titulo}> ZipCode: {item.address.zipcode}</Text>
+            <Text style={styles.titulo}>    Files[0]: </Text>
+            <Text style={styles.titulo}>    Type Files: {item.files[0].type}</Text>
+            <Text style={styles.titulo}>    Name Files: {item.files[0].name}</Text>
+            {/* <Text style={styles.titulo}>      Files[0.0]: </Text>
+            <Text style={styles.titulo}>      Type Files: {item.files[0].files[0].type}</Text>
+            <Text style={styles.titulo}>      Name Files: {item.files[0].files[0].name}</Text>
+            <Text style={styles.titulo}>      Name Files: {item.files[0].files[0].files[0]}</Text> */}
+            <Text style={styles.titulo}>    Files[1]: </Text>
+            <Text style={styles.titulo}>    Type Files: {item.files[1].type}</Text>
+            <Text style={styles.titulo}>    Name Files: {item.files[1].name}</Text>
+            <Text style={styles.titulo}>    Files[2]: </Text>
+            <Text style={styles.titulo}>    Type Files: {item.files[2].type}</Text>
+            <Text style={styles.titulo}>    Name Files: {item.files[2].name}</Text>
+            <Text style={styles.titulo}> ----------------------------------------------------</Text>
           </ScrollView>
         )}
+        keyExtractor={renderitem => renderitem.id}
       />
     </SafeAreaView>
   );
@@ -61,10 +69,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     fontStyle: 'italic',
-  },
-  items: {
-    color: 'white',
-    fontSize: 15,
-    fontWeight: 'normal',
   },
 });

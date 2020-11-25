@@ -18,7 +18,7 @@ export default function MainS({navigation}){
         placeholder="Ingrese la URL" 
         style={styles.text}
         onChangeText={text => setText(text)}
-        defaultValue={""}
+        defaultValue={''}
         clearTextOnFocus>          
       </TextInput>
       <Button
@@ -26,10 +26,10 @@ export default function MainS({navigation}){
         style={styles.button} 
         onPress={() => {
           let minus = text.toLowerCase();
-          if (minus === 'https://jsonplaceholder.typicode.com/users') {
+          if (minus === 'https://run.mocky.io/v3/c22a2d75-a927-4e9b-bbc5-6ac10aa15a26') {
             navigation.navigate('ShowDocumentTree');
           } else {
-            Alert.alert('Por favor ingrese a: "https://jsonplaceholder.typicode.com/users"');
+            Alert.alert('Por favor ingrese a: "https://run.mocky.io/v3/c22a2d75-a927-4e9b-bbc5-6ac10aa15a26"');
           }
         }}>
       </Button>
