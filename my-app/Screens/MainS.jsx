@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, View, TextInput, Button, Text, Alert } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Alert, Image } from 'react-native';
 import 'react-native-gesture-handler';
 
 export default function MainS({navigation}){
@@ -10,11 +10,16 @@ export default function MainS({navigation}){
   return(
 
     <View style={styles.container}>
+      <Image
+        style={styles.logo}
+        source={ require('../assets/logoTransp.png')}
+      />
       <TextInput 
         placeholder="Ingrese la URL" 
         style={styles.text}
         onChangeText={text => setText(text)}
-        defaultValue={text}>          
+        defaultValue={""}
+        clearTextOnFocus>          
       </TextInput>
       <Button
         title='Search URL'
@@ -24,11 +29,10 @@ export default function MainS({navigation}){
           if (minus === 'https://jsonplaceholder.typicode.com/users') {
             navigation.navigate('ShowDocumentTree');
           } else {
-            Alert.alert('Ingresa la URL Correcta');
+            Alert.alert('Por favor ingrese a: "https://jsonplaceholder.typicode.com/users"');
           }
         }}>
       </Button>
-      <Text>{text}</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -42,9 +46,15 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
+    marginBottom: 50,
+    backgroundColor: 'white',
+    color: 'black',
+    width: '80%',
   },
-  button: {
-    width: '80px',
-    height: '30px',
-  }
+  logo: {
+    position: 'absolute',
+    width: '100%',
+    height: 120,
+    top: 20,
+  },
 });
