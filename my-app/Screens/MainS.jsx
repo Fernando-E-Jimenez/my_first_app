@@ -12,7 +12,7 @@ export default function MainS({navigation}){
     <View style={styles.container}>
       <Image
         style={styles.logo}
-        source={ require('../assets/logoTransp.png')}
+        source={require('../assets/logoTransp.png')}
       />
       <TextInput 
         placeholder="Ingrese la URL" 

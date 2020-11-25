@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, StyleSheet, FlatList, SafeAreaView, Image } from 'react-native';
+import { Text, StyleSheet, FlatList, SafeAreaView, Image, ScrollView } from 'react-native';
 
 export default function Login(){
 
@@ -11,7 +11,7 @@ export default function Login(){
   }, []);
 
   const obtenerDatos = async () => {
-    const data = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await fetch('https://jsonplaceholder.typicode.com/users')
     const users = await data.json();
     setUsuarios(users);
   };
@@ -20,27 +20,23 @@ export default function Login(){
     <SafeAreaView style={styles.container}>
       <Image
         style={styles.logo}
-        source={ require('../assets/logoTransp.png')}
+        source={require('../assets/logoTransp.png')}
       />
       <FlatList 
         data={usuarios}
         renderItem={({item}) => (
-          <Text>
-            <Text style={styles.titulo}>Name:</Text>
-            <Text style={styles.items}> {item.name}</Text> 
-            <Text style={styles.titulo}> UserName:</Text>
-            <Text style={styles.items}> {item.username}</Text>
-            <Text style={styles.titulo}> Email:</Text>
-            <Text style={styles.items}> {item.email}</Text>
+          <ScrollView style={styles.scroll}>
+            <Text style={styles.titulo}> ----------------------------------------------------</Text>
+            <Text style={styles.titulo}>ID: {item.id}</Text>
+            <Text style={styles.titulo}> ----------------------------------------------------</Text>
+            <Text style={styles.titulo}>Name: {item.name}</Text>
+            <Text style={styles.titulo}> UserName: {item.username}</Text>
+            <Text style={styles.titulo}> Email: {item.email}</Text>
             <Text style={styles.titulo}> Address: </Text>
-            <Text style={styles.titulo}> Street:</Text>
-            <Text style={styles.items}> {item.address.street}</Text>
-            <Text style={styles.titulo}> City:</Text>
-            <Text style={styles.items}> {item.address.city}</Text>
-            <Text style={styles.titulo}> ZipCode:</Text>
-            <Text style={styles.items}> {item.address.zipcode}</Text>
-            
-          </Text>
+            <Text style={styles.titulo}> Street: {item.address.street}</Text>
+            <Text style={styles.titulo}> City: {item.address.city}</Text>
+            <Text style={styles.titulo}> ZipCode: {item.address.zipcode}</Text>
+          </ScrollView>
         )}
       />
     </SafeAreaView>
@@ -64,6 +60,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
+    fontStyle: 'italic',
   },
   items: {
     color: 'white',
