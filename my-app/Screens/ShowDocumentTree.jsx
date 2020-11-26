@@ -15,6 +15,10 @@ export default function Login(){
     const users = await data.json();
     setUsuarios(users);
   };
+  // fetch('https://run.mocky.io/v3/c22a2d75-a927-4e9b-bbc5-6ac10aa15a26')
+  //   .then( resp => resp.json() )
+  //   .then( setUsuarios(usuarios));
+
 
   return(
     <SafeAreaView style={styles.container}>
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#714adf',
     color: 'white',
   },
   logo: {
